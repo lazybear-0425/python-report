@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Foundations of Python Network Programming, Third Edition
 # https://github.com/brandon-rhodes/fopnp/blob/m/py3/chapter12/build_mime_email.py
-
+# (熊):原程式碼來自作者github，我只是加以修改
 import argparse, email.message, email.policy, email.utils, mimetypes, sys
 
 plain = """Hello,
@@ -16,6 +16,8 @@ img = """<p>This is the smallest possible blue GIF:</p>
 <img src="cid:{}" height="80" width="80">"""
 
 # Tiny example GIF from http://www.perlmonks.org/?node_id=7974
+# 複製網址提供的程式碼，放到.pl檔
+# 可以輸入'perl blue_dot.pl > blue_dot.gif'得到圖片(說實在我不知道這是在幹嘛)
 blue_dot = (b'GIF89a1010\x900000\xff000,000010100\x02\x02\x0410;'
             .replace(b'0', b'\x00').replace(b'1', b'\x01'))
 
