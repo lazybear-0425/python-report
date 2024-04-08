@@ -34,6 +34,8 @@ def main(args):
         message.set_content(html, subtype='html')
         message.add_alternative(plain)
     else:
+        # 此話來自課本
+        # uses make_msgid() because the email module provides no specific facility for building unique content IDs
         cid = email.utils.make_msgid()  # RFC 2392: must be globally unique!
         message.set_content(html + img.format(cid.strip('<>')), subtype='html')
         message.add_related(blue_dot, 'image', 'gif', cid=cid,
