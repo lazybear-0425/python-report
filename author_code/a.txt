@@ -1,0 +1,79 @@
+To: Test Recipient <recipient@example.com>
+From: Test Sender <sender@example.com>
+Subject: Foundations of Python Network Programming
+Date: Mon, 20 May 2024 08:59:00 +0800
+Message-ID: <171616674033.123.18075745870819247247@DESKTOP-ENOERL5.>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============3770850083439791205=="
+
+--===============3770850083439791205==
+Content-Type: multipart/alternative;
+ boundary="===============8082640408706603248=="
+
+--===============8082640408706603248==
+Content-Type: multipart/related;
+ boundary="===============4583710035610699798=="
+
+--===============4583710035610699798==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<p>Hello,</p>
+<p>This is a <b>test message</b> from Chapter 12.</p>
+<p>- <i>Anonymous</i></p><p>This is the smallest possible blue GIF:</p>
+<img src=3D"cid:171616674033.123.14925571389507699668@DESKTOP-ENOERL5." heigh=
+t=3D"80" width=3D"80">
+
+--===============4583710035610699798==
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="blue-dot.gif"
+Content-ID: <171616674033.123.14925571389507699668@DESKTOP-ENOERL5.>
+MIME-Version: 1.0
+
+R0lGODlhAQABAJAAAAAA/wAAACwAAAAAAQABAAACAgQBADs=
+
+--===============4583710035610699798==--
+
+--===============8082640408706603248==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hello,
+This is a MIME message from Chapter 12.
+- Anonymous
+
+--===============8082640408706603248==--
+
+--===============3770850083439791205==
+Content-Type: text/x-python; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: attachment; filename="build_basic_email.py"
+MIME-Version: 1.0
+
+#!/usr/bin/env python3
+# Foundations of Python Network Programming, Third Edition
+# https://github.com/brandon-rhodes/fopnp/blob/m/py3/chapter12/build_basic_em=
+ail.py
+
+import email.message, email.policy, email.utils, sys
+
+text =3D """Hello,
+This is a basic message from Chapter 12.
+ - Anonymous"""
+
+def main():
+    message =3D email.message.EmailMessage(email.policy.SMTP)
+    message['To'] =3D 'recipient@example.com'
+    message['From'] =3D 'Test Sender <sender@example.com>'
+    message['Subject'] =3D 'Test Message, Chapter 12'
+    message['Date'] =3D email.utils.formatdate(localtime=3DTrue)
+    message['Message-ID'] =3D email.utils.make_msgid()
+    message.set_content(text)
+    sys.stdout.buffer.write(message.as_bytes())
+
+if __name__ =3D=3D '__main__':
+    main()
+
+--===============3770850083439791205==--

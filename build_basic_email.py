@@ -10,8 +10,8 @@ This is a basic message from Chapter 12.
  - Anonymous"""
 
 def main():
-    choose = int(input('是否有要設定deomain='))
-    if choose:
+    choose = input('是否有要設定"domain="(y/n) ')
+    if choose == 'y' or choose == 'yes':
         message = email.message.EmailMessage(email.policy.SMTPUTF8)
     else:
         message = email.message.EmailMessage(email.policy.SMTP)
@@ -19,7 +19,7 @@ def main():
     message['From'] = 'Test Sender <sender@example.com>'
     message['Subject'] = 'Test Message, Chapter 12'
     message['Date'] = email.utils.formatdate(localtime=True)
-    if choose: #要設定
+    if choose == 'y' or choose == 'yes': #要設定
         message['Message-ID'] = email.utils.make_msgid(domain='(*ˇωˇ*人)')
     else:
         message['Message-ID'] = email.utils.make_msgid()
@@ -29,10 +29,12 @@ def main():
     print('\n\n這邊用來看as_bytes在幹嘛用的')
     print(message.as_bytes())
     print('\n{!r}'.format(text))
+
+    import os, time
+    print('\n\n看time、PID')
+    print('time:', time.time())
+    print('PID:', os.getpid())
+
 if __name__ == '__main__':
     main()
 
-import os, time
-print('\n\n看time、PID')
-print('time:', time.time())
-print('PID:', os.getpid())
