@@ -1,5 +1,12 @@
  - 第一個程式(build_basic_email.py)
 	 - [來源](https://github.com/brandon-rhodes/fopnp/blob/m/py3/chapter12/build_basic_email.py)
- - 第二個程式(build_mime_email.py)
+	 - 用來觀察EmailMessage中的policy的不同、make_msgid()的domain設置、message-id形成
+ - 第二個程式(build_basic_email_localtime.py) 
+	 - 用來觀察formatdate()的timeval要怎麼設置
+ - 第三個程式(build_mime_email.py)
 	 - [來源](https://github.com/brandon-rhodes/fopnp/blob/m/py3/chapter12/build_mime_email.py)
 	 - 新增兩個附件，一個為.txt(plain)，一個為.gz(binary)
+ - 資料夾 author_code
+	 - 所有作者原始code
+ - 資料夾 yield
+	 - PPT 範例code -- yield的部分
