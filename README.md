@@ -6,6 +6,8 @@
  - 第三個程式(build_mime_email.py)
 	 - [來源](https://github.com/brandon-rhodes/fopnp/blob/m/py3/chapter12/build_mime_email.py)
 	 - 新增兩個附件，一個為.txt(plain)，一個為.gz(binary)
+ - 第四個程式(build_display_recursive.py)
+	 - 用recursive的方式，而非yield，去顯示EmailMessage
  - 資料夾 author_code
 	 - 所有作者原始code
  - 資料夾 yield
