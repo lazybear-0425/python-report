@@ -32,7 +32,7 @@ def main():
 
     import os, time
     print('\n\n看time、PID')
-    print('time:', time.time())
+    print('time:', time.time()) #當前時間的時間戳記（1970 後經過的浮點秒數）
     print('PID:', os.getpid())
 
 if __name__ == '__main__':
